@@ -40,8 +40,7 @@ TwoPlayerChess/
 
 
 # How to Run
-1. Clone the repository
-git clone https://github.com/your-username/two-player-chess.git
+1. Clone the repository git clone https://github.com/your-username/two-player-chess.git
 
 2️. Navigate to project folder
 cd two-player-chess
