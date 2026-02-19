@@ -15,9 +15,9 @@ Queen
 King
 
 # Alternating turns (White / Black)
- Prevents illegal moves
- Check and basic checkmate detection (if implemented)
- Console-based board display
+Prevents illegal moves
+Check and basic checkmate detection (if implemented)
+Console-based board display
 
 # Technologies Used
 Java
@@ -77,7 +77,7 @@ Add en passant
 Add pawn promotion
 Improve checkmate detection
 
- # license
+# license
 This project is open-source and available under the MIT License.
 
 Enjoy this project
