@@ -77,7 +77,7 @@ Add en passant
 Add pawn promotion
 Improve checkmate detection
 
- #icense
+ # license
 This project is open-source and available under the MIT License.
 
 Enjoy this project
