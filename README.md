@@ -40,7 +40,6 @@ TwoPlayerChess/
 
 
 # How to Run
-
 1. Clone the repository git clone https://github.com/your-username/two-player-chess.git
 
 2️. Navigate to project folder
@@ -80,6 +79,6 @@ Improve checkmate detection
 # license
 This project is open-source and available under the MIT License.
 
-Enjoy this project
+Enjoy this game
 
 
