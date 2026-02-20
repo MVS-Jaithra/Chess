@@ -1,21 +1,21 @@
 package chess;
 
-    public abstract class Piece {
+import java.util.List;
 
-        protected PieceColor color;
+public abstract class Piece {
+    protected PieceColor color;
+    protected Position position;
 
-        public Piece(PieceColor color) {
-            this.color = color;
-        }
-
-        public PieceColor getColor() {
-            return color;
-        }
-
-        public abstract char getSymbol();
-
-        public abstract boolean isValidMove(Board board,
-                                            Position from,
-                                            Position to);
+    public Piece(PieceColor color, Position position) {
+        this.color = color;
+        this.position = position;
     }
 
+    public PieceColor getColor() { return color; }
+    public Position getPosition() { return position; }
+    public void setPosition(Position pos) { this.position = pos; }
+
+    public abstract boolean isValidMove(Position to, Board board);
+    public abstract List<Position> getAllPossibleMoves(Board board);
+    public abstract char getSymbol();
+}

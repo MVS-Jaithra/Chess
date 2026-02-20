@@ -1,28 +1,32 @@
 package chess;
 
-    public class Knight extends Piece {
+import java.util.ArrayList;
+import java.util.List;
 
-        public Knight(PieceColor color) {
-            super(color);
-        }
+public class Knight extends Piece {
+    public Knight(PieceColor color, Position position) { super(color, position); }
 
-        public char getSymbol() {
-            return color == PieceColor.WHITE ? 'N' : 'n';
-        }
-
-        public boolean isValidMove(Board board, Position from, Position to) {
-            if (to == null) return false;   // <-- prevent NPE
-            boolean diagonal =
-                    Math.abs(from.getRow() - to.getRow()) ==
-                            Math.abs(from.getCol() - to.getCol());
-            boolean straight =
-                    from.getRow() == to.getRow() ||
-                            from.getCol() == to.getCol();
-
-            if (diagonal || straight)
-                return board.isPathClear(from, to);
-
-            return false;
-        }
+    @Override
+    public boolean isValidMove(Position to, Board board) {
+        int rowDiff = Math.abs(to.getRow() - position.getRow());
+        int colDiff = Math.abs(to.getCol() - position.getCol());
+        if (!((rowDiff == 2 && colDiff == 1) || (rowDiff == 1 && colDiff == 2))) return false;
+        Piece target = board.getPieceAt(to);
+        return target == null || target.getColor() != color;
     }
 
+    @Override
+    public List<Position> getAllPossibleMoves(Board board) {
+        List<Position> moves = new ArrayList<>();
+        for (int r = 0; r < 8; r++) {
+            for (int c = 0; c < 8; c++) {
+                Position p = new Position(r, c);
+                if (isValidMove(p, board)) moves.add(p);
+            }
+        }
+        return moves;
+    }
+
+    @Override
+    public char getSymbol() { return (color == PieceColor.WHITE) ? 'N' : 'n'; }
+}
